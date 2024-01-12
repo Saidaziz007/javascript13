@@ -254,16 +254,110 @@
 // let arr = [5, 2, 3, 5];
 
 // Array.prototype.customSplice = function (first, howD, ...rest) {
-//   let res = []
+//   let res = [];
 //   for (var i = 0; i < this.length; ++i) {
-
 //     if (first === i) {
-      
-//     }else {
-//       res.push(this[i])
-//     };
+//       if (howD == 0) {
+//         res.push(this[i]);
+//       } else {
+//         i += howD - 1;
+//       }
+//       for (let j = 0; j < rest.length; j++) {
+//         res.push(rest[j]);
+//       }
+//     } else {
+//       res.push(this[i]);
+//     }
 //   }
 //   return res;
 // };
 
 // console.log(arr.customSplice(2, 1, 4, 8, 8));
+
+// Constructor
+
+// 1.
+
+// function Animals(name, speed, limitAge) {
+//   this.name = name;
+//   this.speed = speed;
+//   this.limitAge = limitAge;
+// }
+
+// Animals.prototype.info = function () {
+//   return `${this.name}ning tezligi ${this.speed} km/s ga yetadi va ular ${this.limitAge} yilgacha umr ko'radi`;
+// };
+
+// let an = new Animals("Qoplon", 120, 15);
+
+// console.log(an, an.info());
+
+// 2.
+
+// function Student(name, course, years, university) {
+//   this.name = name;
+//   this.course = course;
+//   this.years = years;
+//   this.university = university;
+// }
+
+// Student.prototype.leftYears = function () {
+//   return this.years - this.course == 0
+//     ? "Shu yil tugatadi"
+//     : this.years - this.course < 0
+//     ? "U allaqachon tugatgan"
+//     : this.years - this.course + " yil qoldi";
+// };
+
+// let st = new Student("Abdulla", 3, 4, "TDTU");
+
+// console.log(st, st.leftYears());
+
+// 3.
+
+// function Person(name, age, currentYear) {
+//   this.name = name;
+//   this.age = age;
+//   this.currentYear = currentYear;
+// }
+
+// Person.prototype.getBirthYear = function () {
+//   return `${this.name} ${this.currentYear - this.age}-yilda tug'ilgan`;
+// };
+
+// let per = new Person("Abdulla", 25, 2024);
+
+// 4.
+
+// function Employee(name, salary, workName) {
+//   this.name = name;
+//   this.salary = salary;
+//   this.workName = workName;
+// }
+
+// Employee.prototype.increaseSalary = function (procent) {
+//   return (this.salary * (100 + procent)) / 100;
+// };
+
+// let em = new Employee("Abdulla", 2500, "Enginier");
+
+// console.log(em, em.increaseSalary(10));
+
+// 5.
+
+// function Rectangle(width, height) {
+//   this.width = width;
+//   this.height = height;
+// }
+
+// Rectangle.prototype.getArea = function () {
+//   return `To'rtburchakning yuzi ${this.width * this.height} ga teng`;
+// };
+
+// Rectangle.prototype.getPerimetr = function () {
+//   return `To'rtburchakning perimetri ${2 * (this.width + this.height)} ga teng`;
+// };
+
+// let rec = new Rectangle(5, 8);
+
+// console.log(rec, rec.getArea(), rec.getPerimetr());
